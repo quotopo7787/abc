@@ -14,6 +14,7 @@ public class WebSocketController {
 	@MessageMapping("/chat.sendMessage")
 	@SendTo("/topic/publicChatRoom")
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
+		chatMessage.setContent("a");
 		return chatMessage;
 	}
 
